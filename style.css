@@ -847,6 +847,7 @@ a:hover {
 
 .wireframe-grid img {
   height: 220px;
+  object-fit:fill;
   border-radius: 22px;
   background: #E5C5C6;
   border: 2px solid #F2AAA5;
@@ -861,6 +862,7 @@ a:hover {
 
 .flow-diagram img {
   min-height: 260px;
+  min-width: 180px; 
   border-radius: 24px;
   background: #E5C5C6;
   border: 2px solid #F2AAA5;
@@ -7979,5 +7981,46 @@ select {
     transform: none;
     justify-content: center;
     margin: 0 auto 14px;
+  }
+}
+
+/* PROJECT ONE IMAGE FIT FIX
+   Only affects project-one.html Section 4 wireframe images
+   and Section 5 deliverable/process images. */
+.ability-page .wireframe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.ability-page .wireframe-grid img,
+.ability-page .expanded-flow article img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  object-fit: contain;
+  border-radius: 22px;
+}
+
+.ability-page .expanded-flow {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr 60px 1fr 60px 1fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.ability-page .expanded-flow svg {
+  width: 60px;
+}
+
+@media (max-width: 850px) {
+  .ability-page .wireframe-grid,
+  .ability-page .expanded-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .ability-page .expanded-flow svg {
+    display: none;
   }
 }
