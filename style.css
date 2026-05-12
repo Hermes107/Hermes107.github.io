@@ -799,7 +799,7 @@ a:hover {
 
 .award-summary img {
   max-width: 230px;
-  height: 180px;
+  height: min-content;
   object-fit: cover;
   border-radius: 24px;
   background: #FFF0E9;
