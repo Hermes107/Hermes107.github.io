@@ -43,11 +43,25 @@ document.addEventListener("DOMContentLoaded", () => {
     showSlide(currentIndex);
   }
 
-  nextBtn.addEventListener("click", nextSlide);
-  prevBtn.addEventListener("click", prevSlide);
+ 
+  let autoPlay = setInterval(nextSlide, 3500);
 
-  setInterval(nextSlide, 3500);
+function resetAutoPlay() {
+  clearInterval(autoPlay);
+  autoPlay = setInterval(nextSlide, 3500);
+}
+
+nextBtn.addEventListener("click", () => {
+  nextSlide();
+  resetAutoPlay();
 });
+
+prevBtn.addEventListener("click", () => {
+  prevSlide();
+  resetAutoPlay();
+});
+});
+
 
 
 document.addEventListener("DOMContentLoaded", () => {
