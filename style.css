@@ -1210,6 +1210,7 @@ a:hover {
   aspect-ratio: 1 / 1;
   border-radius: 18px;
   background: #E6E6DB;
+  object-fit:fill;
   border: 2px solid #A0BBB2;
 }
 
